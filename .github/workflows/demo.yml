@@ -20,8 +20,6 @@ jobs:
         run: npm run lint
       - name: Test code
         run: npm run test
-      - name: listing
-        run: find / -type f -regex ".*/index\.[0-9]+\.js" 2>/dev/null
       - name: upload the artifactes 
         uses: actions/upload-artifact@v4
         with:
