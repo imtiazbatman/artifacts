@@ -16,7 +16,7 @@ jobs:
       - name: Test code
         run: npm run test
       - name: listing
-        run: ls -l
+        run: find / -type d -name "dist" 2>/dev/null
       - name: upload the artifactes 
         uses: actions/upload-artifact@v4
         with:
