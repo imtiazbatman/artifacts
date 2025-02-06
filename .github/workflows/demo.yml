@@ -58,3 +58,4 @@ jobs:
         run: |
          echo "FORM jobs ${{ env.FROM_JOBS }}"
          echo "${{ env.FROM_WORKFLOW }}"
+         echo "${{ secrets.SECRET}}"
