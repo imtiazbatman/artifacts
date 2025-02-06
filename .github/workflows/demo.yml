@@ -7,6 +7,7 @@ env:
   FROM_WORKFLOW: from-workflow
 jobs:
   test:
+    environment: Production
     runs-on: ubuntu-latest
     env:
       FROM_JOBS: indside_jobs_test
@@ -22,6 +23,7 @@ jobs:
         run: |
          echo "${{ env.FROM_JOBS }}"
          echo "${{ env.FROM_WORKFLOW }}"
+         echo "${{env.ENVIRONMENT}}"
       - name: Install dependencies
         run: npm ci
       - name: Lint code
