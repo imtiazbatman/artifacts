@@ -24,7 +24,7 @@ jobs:
          echo "${{ env.FROM_JOBS }}"
          echo "${{ env.FROM_WORKFLOW }}"
          echo "production:${{env.ENVIRONMENT}}"
-      - name: Install dependencies
+      - name: Install dependenciess
         run: npm ci
       - name: Lint code
         run: npm run lint
