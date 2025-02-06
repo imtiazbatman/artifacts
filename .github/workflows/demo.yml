@@ -23,7 +23,7 @@ jobs:
         run: |
          echo "${{ env.FROM_JOBS }}"
          echo "${{ env.FROM_WORKFLOW }}"
-         echo "${{env.ENVIRONMENT}}"
+         echo "production:${{env.ENVIRONMENT}}"
       - name: Install dependencies
         run: npm ci
       - name: Lint code
