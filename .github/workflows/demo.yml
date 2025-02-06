@@ -3,9 +3,13 @@ on:
   push:
     branches:
       - main
+env: 
+  FROM_WORKFLOW: from-workflow
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      FROM_JOBS: indside_jobs_test
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -14,6 +18,10 @@ jobs:
         with:
           path: ~/.npm
           key: test-cash-${{ hashFiles('**/package-lock.json') }}
+      - name: Display the env
+        run: |
+        echo "${{ env.FROM_JOBS }}"
+        echo "${{ env.FROM_WORKFLOW }}"
       - name: Install dependencies
         run: npm ci
       - name: Lint code
@@ -46,3 +54,7 @@ jobs:
     steps:
       - name: Deploy
         run: echo "Deploying..."
+      - name: Display the env
+        run: |
+        echo "FORM jobs ${{ env.FROM_JOBS }}"
+        echo "${{ env.FROM_WORKFLOW }}"
