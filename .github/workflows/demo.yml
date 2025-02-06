@@ -20,8 +20,8 @@ jobs:
           key: test-cash-${{ hashFiles('**/package-lock.json') }}
       - name: Display the env
         run: |
-        echo "${{ env.FROM_JOBS }}"
-        echo "${{ env.FROM_WORKFLOW }}"
+         echo "${{ env.FROM_JOBS }}"
+         echo "${{ env.FROM_WORKFLOW }}"
       - name: Install dependencies
         run: npm ci
       - name: Lint code
@@ -56,5 +56,5 @@ jobs:
         run: echo "Deploying..."
       - name: Display the env
         run: |
-        echo "FORM jobs ${{ env.FROM_JOBS }}"
-        echo "${{ env.FROM_WORKFLOW }}"
+         echo "FORM jobs ${{ env.FROM_JOBS }}"
+         echo "${{ env.FROM_WORKFLOW }}"
